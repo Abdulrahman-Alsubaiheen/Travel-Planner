@@ -48,4 +48,9 @@ app.post('/data', async (req, res) => {
     data = req.body ;
     projectData.push(data)
     res.send(projectData);
+
+    // projectData.date = req.body.date;
+    // projectData.temp = req.body.temp;
+    // projectData.feelings = req.body.feelings;
+
 });
