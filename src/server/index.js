@@ -6,7 +6,6 @@ projectData = {}
 // APIs
 
 var path = require('path')
-const mockAPIResponse = require('./mockAPI.js')
 const fetch = require("node-fetch");
 
 const express = require('express')
@@ -27,8 +26,8 @@ app.use(cors());
 
 
 // designates what port the app will listen to for incoming requests
-app.listen(8081, function () {
-    console.log('Example app listening on port 8081!')
+app.listen(8085, function () {
+    console.log('Example app listening on port 8085!')
 })
 
 // ~~~~~~ Routes ~~~~~~
@@ -48,9 +47,4 @@ app.post('/data', async (req, res) => {
     data = req.body ;
     projectData.push(data)
     res.send(projectData);
-
-    // projectData.date = req.body.date;
-    // projectData.temp = req.body.temp;
-    // projectData.feelings = req.body.feelings;
-
 });
