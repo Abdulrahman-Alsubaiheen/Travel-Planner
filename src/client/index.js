@@ -8,7 +8,7 @@ import './styles/footer.scss'
 import './styles/header.scss'
 
 
-alert("I EXIST")
+// alert("I EXIST")
 
 export {
     checkForDate,

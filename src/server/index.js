@@ -38,9 +38,14 @@ app.get('/', function (req, res) {
     // res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
+// ( GET )
+app.get('/data', async (req, res) => {
+    res.send(projectData);
+});
 
 // ( POST )  
-app.post('/api', async (req, res) => {
-
-
+app.post('/data', async (req, res) => {
+    data = req.body ;
+    projectData.push(data)
+    res.send(projectData);
 });

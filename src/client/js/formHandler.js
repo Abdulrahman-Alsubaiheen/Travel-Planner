@@ -1,29 +1,47 @@
+/* Global Variables */
+
+
 function handleSubmit(event) {
     event.preventDefault()
 
-    // check what text was put into the form field
-    const Url = document.getElementById('name').value
+    const location =  document.getElementById('location').value;
+    const start_date =  document.getElementById('start-date').valueAsNumber;
+    const end_date =  document.getElementById('end-date').valueAsNumber;
 
-    // alert(" handleSubmit-> Url : " + Url);
+    const total_days = tripDuration(start_date , end_date) ;
+    // console.log(total_days + " days");
 
-    if(Client.checkForUrl(Url)){
+    
+    //check the input 
 
-        postData('http://localhost:8081/api' , {url : Url})
 
-        .then(function(data){
-            document.getElementById('agreement').innerHTML = `agreement: ${data.agreement}`;
-            document.getElementById('confidence').innerHTML = `confidence: ${data.confidence}`;
-            document.getElementById('irony').innerHTML = `irony: ${data.irony}`;
-            document.getElementById('score_tag').innerHTML = `score_tag: ${data.score_tag}`;
-            document.getElementById('subjectivity').innerHTML = `subjectivity: ${data.subjectivity}`;        
-        })
-    }
+    //
 
-    else {
-        alert('the URL is invalid.');
-    }  
-
+    // getData(baseUrl , zip , API_Key)
+    // .then(function(data){
+    //   postData('/data', {date: newDate, feelings: feelings , temp: data.main.temp} );
+    // })
+    // .then(
+    //   updateUI()
+    // )
 }
+
+function tripDuration (start_date , end_date){
+
+  const diffTime = Math.abs(end_date - start_date);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+
+  return diffDays;
+}
+
+// ~~~~~~ ( GET ) data ~~~~~~
+const getData = async (url) => {
+
+  const response = await fetch(url)
+    const data = await response.json();
+
+    return data;
+  }
 
 
 // ~~~~~~ ( POST ) data ~~~~~~
