@@ -8,38 +8,53 @@
     <body>
 
         <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+            <div class="navbar"> 
+                <h1 class="h1">Travel Planner</h1>
+                 <nav>
+                  <ul class="nav_link">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About Me</a></li>
+                  </ul>
+                </nav>
+              </div>
+                </header>
 
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
                     <input type="text" id="location" name="input" value="" placeholder="Location">
-                    <input type="date" id="start-date" name="date" placeholder="MM/vfDD/YYYY"  />
+                    <input type="date" id="start-date" name="date" placeholder="MM/DD/YYYY"  />
                     <input type="date" id="end-date" name="date" placeholder="MM/DD/YYYY"  />
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
 
-            <section>
-                <strong>Results:</strong>
-                
-                <div id="weather"></div>
+            <section class="box">
+                <strong class="text">Results:</strong>
+                <div class="text" id="destination"></div>
+                <div class="text" id="total_days"></div>
+                <div class="text" id="weather"></div>
 
-                <div id="images"></div>
+                <img class="box-img" id="image_1"></img>
+                <img class="box-img" id="image_2"></img>
 
             </section>
         </main>
 
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-        
+        <footer class="footer"> 
+
+            <div class="social_media">
+              <a href="https://wa.me/966534601690"><img src="../image/social_media/whatsapp.png" alt=""></a>
+              <a href="https://twitter.com/d7oom2288"><img src="../image/social_media/twitter.png" alt=""></a>
+              <a href="https://www.linkedin.com/in/abdulrahman-alsubaiheen/"><img src="../image/social_media/linkedin.png" alt=""></a>
+              <a href="https://github.com/aboXmsa3d"><img src="../image/social_media/github.png" alt=""></a>
+            </div>
+            
+            <img class="logo" src="../image/logo_transparent.png" alt="logo">
+          
+            <p class="copy_rights"> © 2020 aboXmsa3d</p>
+          </footer>
+            
         <script>
             // Check that service workers are supported
             if ('serviceWorker' in navigator) {
