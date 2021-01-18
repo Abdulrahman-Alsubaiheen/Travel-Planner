@@ -26,8 +26,8 @@ app.use(cors());
 
 
 // designates what port the app will listen to for incoming requests
-app.listen(8085, function () {
-    console.log('Example app listening on port 8085!')
+app.listen(8081, function () {
+    console.log('Example app listening on port 8081!')
 })
 
 // ~~~~~~ Routes ~~~~~~
